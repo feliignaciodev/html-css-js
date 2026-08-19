@@ -1,0 +1,16 @@
+body{
+    background-color: crimson;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.mi-boton:hover{
+    background-color: darkgoldenrod;
+    border-radius: 15px;
+    transition: all 15;
+}
+
+#miBoton{
+    color: black;
+}
