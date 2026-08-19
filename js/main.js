@@ -1,40 +1,65 @@
+// Mensaje sencillo para verificar que el archivo JS se ejecuta
 console.log("hola mundo desde main.js");
 
+// Referencias a elementos del DOM (están definidos en index.html)
 const miBoton = document.getElementById("miBoton");
 const primerNumero = document.getElementById("primerNumero");
 const segundoNumero = document.getElementById("segundoNumero");
 const miSelect = document.getElementById("miSelect");
 const resultado = document.getElementById("resultado");
-const total = document.getElementById("total");
 
-//esto es para ir debugeando el codigo, con esto verificamos que 
-console.log(miBoton, primerNumero, segundoNumero, miSelect);
+// Variable para almacenar el resultado numérico de la operación
+let total = 0;
 
+// Depuración: comprobar que las referencias se obtuvieron correctamente
+console.log(miBoton, primerNumero, segundoNumero, miSelect, resultado);
 
-//Manera de sumar dos numeros dentro de aqui, agregamos un escuchador, y ponemos constantes 
-//a los valor capturados con el get, despues de eso transformamos y con el console log verificamos que el proceso este bien.
+// Añadimos un listener al botón; cuando se haga click se ejecuta la función
 miBoton.addEventListener('click', function(){
 
-    const valorMiSelect = miSelect.value;
-    const valorPrimerNumero = Number(primerNumero.value);
+    // Obtenemos los valores actuales del select y de los inputs
+    const valorMiSelect = miSelect.value; // por ejemplo: 'suma', 'resta'
+    const valorPrimerNumero = Number(primerNumero.value); // convierte a número
     const valorSegundoNumero = Number(segundoNumero.value);
-    
-    switch (valorMiSelect){
-        case 'Suma' : 
-            total = valorPrimerNumero+valorSegundoNumero;
-            break;
-        case 'Resta' : 
-            total = valorPrimerNumero-valorSegundoNumero;
-            break;
-        case 'Multiplicacion' : 
-            total = valorPrimerNumero*valorSegundoNumero;
-            break;
-        case 'Division' : 
-            total = valorPrimerNumero/valorSegundoNumero;
-            break;                        
+
+    // Logs para depuración paso a paso
+    console.log('Click en botón. Valores leídos ->', {
+        valorPrimerNumero,
+        valorSegundoNumero,
+        operacion: valorMiSelect
+    });
+
+    // Validación básica: evitar operaciones con valores no numéricos
+    if (isNaN(valorPrimerNumero) || isNaN(valorSegundoNumero)){
+        resultado.innerHTML = 'Introduce números válidos';
+        return; // sale de la función
     }
 
+    // Usamos switch sobre los valores que vienen del <select>
+    // En el HTML las opciones tienen valores en minúsculas ('suma', 'resta', ...)
+    switch (valorMiSelect){
+        case 'suma' :
+            total = valorPrimerNumero + valorSegundoNumero;
+            break;
+        case 'resta' :
+            total = valorPrimerNumero - valorSegundoNumero;
+            break;
+        case 'multiplicacion' :
+            total = valorPrimerNumero * valorSegundoNumero;
+            break;
+        case 'division' :
+            // Evitar división entre cero
+            total = valorSegundoNumero === 0 ? 'Error: división por 0' : valorPrimerNumero / valorSegundoNumero;
+            break;
+        default:
+            total = 'Operación no válida';
+    }
+
+    // Mostrar el resultado en la página
     resultado.innerHTML = total;
+
+    // Log final con el resultado calculado
+    console.log('Resultado mostrado:', total);
 });
 
 

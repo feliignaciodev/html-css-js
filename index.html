@@ -1,28 +1,38 @@
 <!DOCTYPE html>
+<!-- Declaración del tipo de documento: HTML5 -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Metadatos del documento -->
+    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace la página responsiva -->
+    <title>Document</title> <!-- Título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Enlaza la hoja de estilos CSS -->
+    <!-- Atención: la siguiente línea enlaza un archivo JS como si fuera CSS. -->
+    <!-- Probablemente es un error; los archivos JS deben incluirse con <script>. -->
     <link rel="stylesheet" href="js/main.js">
 </head>
 <body>
-    <h1>Hola mundo</h1>
+    <!-- Contenido visible de la página -->
+    <h1>Hola mundo</h1> <!-- Encabezado principal -->
     
-    <input type="number" id="primerNumero" placeholder="Ingrese el primer numero">
-    <input type="number" id="segundoNumero" placeholder="Ingrese el segundo numero">
+    <!-- Campos de entrada para dos números -->
+    <input type="number" id="primerNumero" placeholder="Ingrese el primer numero"> <!-- Primer número -->
+    <input type="number" id="segundoNumero" placeholder="Ingrese el segundo numero"> <!-- Segundo número -->
 
+    <!-- Selector para elegir la operación -->
     <select id="miSelect">
-        <option value="suma">Suma</option>
-        <option value="resta">Resta</option>
-        <option value="division">Division</option>
-        <option value="multiplicacion">Multiplicacion</option>
+        <option value="suma">Suma</option> <!-- Opción: suma -->
+        <option value="resta">Resta</option> <!-- Opción: resta -->
+        <option value="division">Division</option> <!-- Opción: división -->
+        <option value="multiplicacion">Multiplicacion</option> <!-- Opción: multiplicación -->
 
     </select>
     
+    <!-- Botón para ejecutar la operación seleccionada -->
     <button id="miBoton">presioname</button>
+    <!-- Contenedor donde se mostrará el resultado; inicializado en 0 -->
     <div id ="resultado">0</div>
+    <!-- Inclusión del archivo JavaScript al final del body para que el DOM esté cargado -->
     <script src="js/main.js"></script>
 
 </body>
