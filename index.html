@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <!-- Declaración del tipo de documento: HTML5 -->
 <html lang="en">
+
 <head>
     <!-- Metadatos del documento -->
     <meta charset="UTF-8"> <!-- Codificación de caracteres -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace la página responsiva -->
     <title>Document</title> <!-- Título que aparece en la pestaña del navegador -->
     <link rel="stylesheet" href="css/style.css"> <!-- Enlaza la hoja de estilos CSS -->
+    <link rel="stylesheet" href="css/pure-min-css.css">
     <!-- Atención: la siguiente línea enlaza un archivo JS como si fuera CSS. -->
     <!-- Probablemente es un error; los archivos JS deben incluirse con <script>. -->
     <link rel="stylesheet" href="js/main.js">
+    
 </head>
+
 <body>
     <!-- Contenido visible de la página -->
     <h1>Hola mundo</h1> <!-- Encabezado principal -->
-    
+
     <!-- Campos de entrada para dos números -->
     <input type="number" id="primerNumero" placeholder="Ingrese el primer numero"> <!-- Primer número -->
     <input type="number" id="segundoNumero" placeholder="Ingrese el segundo numero"> <!-- Segundo número -->
@@ -27,13 +31,14 @@
         <option value="multiplicacion">Multiplicacion</option> <!-- Opción: multiplicación -->
 
     </select>
-    
+
     <!-- Botón para ejecutar la operación seleccionada -->
     <button id="miBoton">presioname</button>
     <!-- Contenedor donde se mostrará el resultado; inicializado en 0 -->
-    <div id ="resultado">0</div>
+    <div id="resultado">0</div>
     <!-- Inclusión del archivo JavaScript al final del body para que el DOM esté cargado -->
     <script src="js/main.js"></script>
 
 </body>
+
 </html>

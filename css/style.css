@@ -13,4 +13,6 @@ body{
 
 #miBoton{
     color: black;
+    border-radius: 15px;
+    transition: all 15;
 }
